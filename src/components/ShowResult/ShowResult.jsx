@@ -2,22 +2,28 @@ import React, { useState, useEffect, Fragment } from 'react';
 import './ShowResult.scss';
 import API from '../../API/API';
 
-const ShowResult = ({index, Type, Title, Year, imdbID }) => {
+const ShowResult = ({index, Type, Title, Year, imdbID, setIsLoading }) => {
 	const [isClicked, changeIsClicked] = useState(false);
 	const [movieData, setMovieData] = useState({ });
 	useEffect(() => {
 		if(isClicked) {
+			setIsLoading(true);
 			API.getFullPlot(imdbID)
-				.then(result => setMovieData(result.data))
-				.catch(err => console.log('err', err));
+				.then(result => {
+					setMovieData(result.data);
+					setIsLoading(false);
+				})
+				.catch(err => {
+					console.log('err', err);
+					setIsLoading(false);
+				});
 		}
 	}, [isClicked]);
-
 	const onClickResult = (e) => {
 		e.preventDefault();
 		changeIsClicked(!isClicked);
 	};
-	
+
 	const shortResult = <div className='ShowResult' onClick={onClickResult}>
 		<div className='Small'>{index}</div>
 		<div>{Type}</div>

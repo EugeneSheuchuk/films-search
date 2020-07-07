@@ -10,10 +10,25 @@
     text-align: center;
   }
 
+  .ResultContainer {
+    position: relative;
+  }
+
   .Pagination {
     width: 100%;
     text-align: center;
     margin-top: 20px;
+  }
+  .Paranja {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+  }
+
+  .Loading {
+    color: lightgrey;
   }
 
 }
