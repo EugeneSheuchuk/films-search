@@ -7,8 +7,14 @@ const key = '';
 const axiosInstance = axios.create(config);
 
 const API = {
-	searchFilmsByTitle: (title) => {
-		const query = `/${key}&s=${title}`
+	searchFilmsByTitle: (title, currentPage) => {
+		const query = currentPage === 1
+			? `/${key}&s=${title}`
+			: `/${key}&s=${title}&page=${currentPage}`
+		return axiosInstance.get(query);
+	},
+	getFullPlot: (imdbID) => {
+		const query =`/${key}&i=${imdbID}&plot=full`;
 		return axiosInstance.get(query);
 	},
 };

@@ -1,0 +1,15 @@
+.ShowResult {
+  display: grid;
+  grid-template-columns: 30px 100px 5fr 150px;
+  margin-bottom: 10px;
+  padding: 5px 0;
+
+  div {
+    margin-left: 5px;
+  }
+}
+
+.ShowResult:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
