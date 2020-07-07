@@ -1,8 +1,8 @@
 .ShowResult {
   display: grid;
-  grid-template-columns: 30px 100px 5fr 150px;
-  margin-bottom: 10px;
-  padding: 5px 0;
+  //grid-template-columns: 30px 100px 5fr 150px;
+  //margin-bottom: 10px;
+  //padding: 5px 0;
 
   div {
     margin-left: 5px;
@@ -12,4 +12,78 @@
 .ShowResult:hover {
   background-color: lightgrey;
   cursor: pointer;
+}
+
+.FullResult {
+  display: grid;
+  //grid-template-columns: 320px 5fr;
+  //padding: 10px 20px 0 20px;
+  //margin-bottom: 10px;
+  //
+  //.Poster {
+  //  img {
+  //    width: 300px;
+  //  }
+  //}
+  //.Description {
+  //  padding: 0 10px;
+  //}
+}
+
+@media only screen and (max-width: 600px) {
+  .ShowResult {
+    .Small{
+      display: none;
+    }
+    grid-template-columns: 20vw 79vw;
+    margin-bottom: 10px;
+    padding: 5px 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .ShowResult {
+    .Small{
+      display: block;
+    }
+    .Title {
+      padding-right: 10px;
+    }
+    grid-template-columns: 10vw 15vw 57vw 10vw;
+    margin-bottom: 10px;
+    padding: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .FullResult {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .Poster {
+      text-align: center;
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .FullResult {
+    display: grid;
+    grid-template-columns: 320px 5fr;
+    padding: 10px 20px 0 20px;
+    margin-bottom: 10px;
+
+    .Poster {
+      img {
+        width: 300px;
+      }
+    }
+    .Description {
+      padding: 0 10px;
+    }
+  }
 }

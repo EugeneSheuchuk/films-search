@@ -8,9 +8,7 @@ const ShowResult = ({index, Type, Title, Year, imdbID }) => {
 	useEffect(() => {
 		if(isClicked) {
 			API.getFullPlot(imdbID)
-				.then(result => {
-					setMovieData(result.data);
-				})
+				.then(result => setMovieData(result.data))
 				.catch(err => console.log('err', err));
 		}
 	}, [isClicked]);
@@ -21,15 +19,24 @@ const ShowResult = ({index, Type, Title, Year, imdbID }) => {
 	};
 	
 	const shortResult = <div className='ShowResult' onClick={onClickResult}>
-		<div>{index}</div>
-		<div>Type: {Type}</div>
-		<div>Title: {Title}</div>
-		<div>Year: {Year}</div>
+		<div className='Small'>{index}</div>
+		<div>{Type}</div>
+		<div className='Title'>{Title}</div>
+		<div className='Small'>{Year}</div>
 	</div>;
+	let posterUrl = '';
+	let posterAlt = '';
+	if (movieData.Poster === 'N/A') {
+		posterUrl = '#';
+		posterAlt = 'There is no poster';
+	} else {
+		posterUrl = movieData.Poster;
+		posterAlt = 'The poster of the movie'
+	}
 
 	const fullResult = <div className='FullResult'>
 		<div className='Poster'>
-			<img src={movieData.Poster} alt="The poster of the movie"/>
+			<img src={posterUrl} alt={posterAlt}/>
 		</div>
 		<div className='Description' >
 			<div>Title: {Title}</div>

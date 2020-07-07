@@ -10,7 +10,7 @@ const SeachInput = ({ searchValue, changeSearchValue }) => {
 
 	return (
 		<Input
-			placeholder={`type the movie's name`}
+			placeholder={`Type the movie's name`}
 			value={searchValue}
 			onChange={typeMovieName}
 		/>

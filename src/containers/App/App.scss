@@ -1,0 +1,42 @@
+.App {
+  padding: 30px;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .Pagination {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    .Pagination {
+      .Wide {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    .Pagination {
+      .Wide {
+        display: block;
+      }
+      .Narrow {
+        display: none;
+      }
+    }
+  }
+}

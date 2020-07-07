@@ -13,7 +13,7 @@ const ResultContainer = ({currentSearchResults}) => {
 		/>)
 	return(
 		<div className='ResultContainer'>
-			<h3>The following matches are displayed for your request:</h3>
+			<h2>The following matches are displayed for your request:</h2>
 			{viewResults}
 		</div>
 	);
