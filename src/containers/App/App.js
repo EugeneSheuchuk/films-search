@@ -55,6 +55,7 @@ const App = () => {
                     <div className="Pagination">
                         <div className="Wide">
                             <Pagination
+                                disabled={isLoading}
                                 defaultCurrent={currentPage}
                                 total={amountOfResult}
                                 showSizeChanger={false}
@@ -65,6 +66,7 @@ const App = () => {
                         <div className="Narrow">
                             <Pagination
                                 simple
+                                disabled={isLoading}
                                 defaultCurrent={currentPage}
                                 total={amountOfResult}
                                 onChange={onPageChange}
