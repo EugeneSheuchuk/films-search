@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from 'antd';
 
-const SeachInput = ({ searchValue, changeSearchValue }) => {
+const SearchInput = ({ searchValue, changeSearchValue }) => {
     const typeMovieName = (e) => {
         e.preventDefault();
         const movieName = e.currentTarget.value;
@@ -11,4 +11,4 @@ const SeachInput = ({ searchValue, changeSearchValue }) => {
     return <Input placeholder={`Type the movie's name`} value={searchValue} onChange={typeMovieName} />;
 };
 
-export default SeachInput;
+export default SearchInput;

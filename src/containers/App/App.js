@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import SeachInput from '../../components/SearchInput/SearchInput';
+import SearchInput from '../../components/SearchInput/SearchInput';
 import { Pagination } from 'antd';
 import API from '../../API/API';
 import ResultContainer from '../ResultContainer/ResultContainer';
@@ -49,7 +49,7 @@ const App = () => {
     return (
         <div className="App">
             <h1>Welcome to movie search service!</h1>
-            <SeachInput searchValue={searchValue} changeSearchValue={changeSearchValue} />
+            <SearchInput searchValue={searchValue} changeSearchValue={changeSearchValue} />
             <div className={activeStyle}>
                 {amountOfResult > 10 ? (
                     <div className="Pagination">

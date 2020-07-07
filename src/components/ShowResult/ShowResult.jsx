@@ -32,20 +32,15 @@ const ShowResult = ({ index, Type, Title, Year, imdbID, setIsLoading }) => {
             <div className="Small">{Year}</div>
         </div>
     );
-    let posterUrl = '';
-    let posterAlt = '';
-    if (movieData.Poster === 'N/A') {
-        posterUrl = '#';
-        posterAlt = 'There is no poster';
-    } else {
-        posterUrl = movieData.Poster;
-        posterAlt = 'The poster of the movie';
-    }
+
+    const poster = movieData.Poster === 'N/A'
+        ? <p>There is no poster</p>
+        : <img src={movieData.Poster} alt='The poster of the movie' />
 
     const fullResult = (
         <div className="FullResult">
             <div className="Poster">
-                <img src={posterUrl} alt={posterAlt} />
+                {poster}
             </div>
             <div className="Description">
                 <div>Title: {Title}</div>
