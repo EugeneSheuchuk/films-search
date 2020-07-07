@@ -1,75 +1,75 @@
 .ShowResult {
-  display: grid;
+    display: grid;
 
-  div {
-    margin-left: 5px;
-  }
+    div {
+        margin-left: 5px;
+    }
 }
 
 .ShowResult:hover {
-  background-color: lightgrey;
-  cursor: pointer;
+    background-color: lightgrey;
+    cursor: pointer;
 }
 
 .FullResult {
-  display: grid;
+    display: grid;
 }
 
 @media only screen and (max-width: 600px) {
-  .ShowResult {
-    .Small{
-      display: none;
+    .ShowResult {
+        .Small {
+            display: none;
+        }
+        grid-template-columns: 18vw 60vw;
+        margin-bottom: 10px;
+        padding: 5px 0;
     }
-    grid-template-columns: 18vw 60vw;
-    margin-bottom: 10px;
-    padding: 5px 0;
-  }
 }
 
 @media only screen and (min-width: 600px) {
-  .ShowResult {
-    .Small{
-      display: block;
+    .ShowResult {
+        .Small {
+            display: block;
+        }
+        .Title {
+            padding-right: 10px;
+        }
+        grid-template-columns: 10vw 15vw 57vw 10vw;
+        margin-bottom: 10px;
+        padding: 5px 0;
     }
-    .Title {
-      padding-right: 10px;
-    }
-    grid-template-columns: 10vw 15vw 57vw 10vw;
-    margin-bottom: 10px;
-    padding: 5px 0;
-  }
 }
 
 @media only screen and (max-width: 720px) {
-  .FullResult {
-    display: block;
-    margin-bottom: 20px;
-    width: 100%;
+    .FullResult {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
 
-    .Poster {
-      text-align: center;
-      margin-bottom: 10px;
-      img {
-        width: 260px;
-      }
+        .Poster {
+            text-align: center;
+            margin-bottom: 10px;
+            img {
+                width: 260px;
+            }
+        }
     }
-  }
 }
 
 @media only screen and (min-width: 720px) {
-  .FullResult {
-    display: grid;
-    grid-template-columns: 320px 5fr;
-    padding: 10px 20px 0 20px;
-    margin-bottom: 10px;
+    .FullResult {
+        display: grid;
+        grid-template-columns: 320px 5fr;
+        padding: 10px 20px 0 20px;
+        margin-bottom: 10px;
 
-    .Poster {
-      img {
-        width: 300px;
-      }
+        .Poster {
+            img {
+                width: 300px;
+            }
+        }
+        .Description {
+            padding: 0 10px;
+        }
     }
-    .Description {
-      padding: 0 10px;
-    }
-  }
 }
